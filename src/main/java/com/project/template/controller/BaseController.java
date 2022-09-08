@@ -51,7 +51,8 @@ public abstract class BaseController
      * @param resource the request body for a resource
      * @return the resources
      */
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     public R create(@RequestBody final R resource) {
         return service.create(resource);
     }
@@ -63,7 +64,8 @@ public abstract class BaseController
      * @param resource the request body for a resource
      * @return the resources
      */
-    @PostMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     public R updateById(@PathVariable final Long id,
             @RequestBody final R resource) {
         return service.update(id, resource);

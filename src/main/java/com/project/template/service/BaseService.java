@@ -1,12 +1,14 @@
 package com.project.template.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.project.template.exception.EntityNotFoundException;
 import com.project.template.model.Base;
 import com.project.template.resource.BaseResource;
 
@@ -31,7 +33,11 @@ public abstract class BaseService<M extends Base, R extends BaseResource> {
      * @return the resource
      */
     public R get(final Long id) {
-        return convertModelToResource(repository.findById(id).get());
+        Optional<M> model = repository.findById(id);
+        if (model.isEmpty()) {
+            throw new EntityNotFoundException(id);
+        }
+        return convertModelToResource(model.get());
     }
 
     /**
@@ -62,6 +68,9 @@ public abstract class BaseService<M extends Base, R extends BaseResource> {
      * @return the resource
      */
     public R update(final Long id, final R resource) {
+        if (!repository.existsById(id)) {
+            throw new EntityNotFoundException(id);
+        }
         resource.setId(id);
         M model = convertResourceToModel(resource);
         return convertModelToResource(repository.save(model));
