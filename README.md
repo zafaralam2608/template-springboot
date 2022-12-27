@@ -7,9 +7,10 @@ Template for spring-boot project
 
 ### Built with
 * [Spring Boot](https://spring.io/projects/spring-boot/)
+* [Thymeleaf](https://www.thymeleaf.org/)
 * [Lombok](https://projectlombok.org/)
 * [Springdoc Open API](https://springdoc.org/)
-* [H2 DB](https://www.h2database.com/html/main.htmlhttps://www.h2database.com/html/main.html)
+* [H2 DB](https://www.h2database.com/html/main.html)
 
 ### Code check and styling
  [Checkstyle](https://maven.apache.org/plugins/maven-checkstyle-plugin/index.html)
