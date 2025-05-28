@@ -1,5 +1,6 @@
 package com.project.template.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ public class SampleController extends BaseController<Sample, SampleResource> {
     /**
      * @param service dependency for user
      */
+    @Autowired
     public SampleController(final SampleService service) {
         super(service);
     }

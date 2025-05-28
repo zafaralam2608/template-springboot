@@ -1,10 +1,10 @@
 package com.project.template.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,7 @@ public class Sample extends Base {
     /** The unique id. */
     @Id
     @SequenceGenerator(
-            name = "SAMPLE_ID_GEN", initialValue = 1, allocationSize = 1)
+            name = "SAMPLE_ID_GEN", allocationSize = 1)
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE, generator = "SAMPLE_ID_GEN")
     private Long id;

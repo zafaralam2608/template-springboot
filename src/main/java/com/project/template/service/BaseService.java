@@ -2,7 +2,6 @@ package com.project.template.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ public abstract class BaseService<M extends Base, R extends BaseResource> {
 
     /** The dependency for ModelMapper. */
     @Autowired
-    private ModelMapper modelMapper;
+    private ModelMapper mapper;
 
     /** The repository dependency. */
     private final JpaRepository<M, Long> repository;
@@ -101,7 +100,7 @@ public abstract class BaseService<M extends Base, R extends BaseResource> {
      */
     protected List<R> convertModelsToResources(final List<M> models) {
         return models.stream().map(this::convertModelToResource)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
