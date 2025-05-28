@@ -7,7 +7,6 @@ Template for spring-boot project
 
 ### Built with
 * [Spring Boot](https://spring.io/projects/spring-boot/)
-* [Thymeleaf](https://www.thymeleaf.org/)
 * [Lombok](https://projectlombok.org/)
 * [Springdoc Open API](https://springdoc.org/)
 * [H2 DB](https://www.h2database.com/html/main.html)
@@ -18,7 +17,7 @@ Template for spring-boot project
 ## Installation
 
 ### Pre-requisites
-* [JDK 11](https://www.oracle.com/in/java/technologies/javase/jdk11-archive-downloads.html)
+* [JDK 24](https://www.oracle.com/in/java/technologies/java-se-glance.html)
 * [Maven 3](https://maven.apache.org/download.cgi)
 
 ### Launch
