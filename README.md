@@ -17,14 +17,14 @@ Template for spring-boot project
 ## Installation
 
 ### Pre-requisites
-* [JDK 24](https://www.oracle.com/in/java/technologies/java-se-glance.html)
+* [JDK 25](https://www.oracle.com/in/java/technologies/java-se-glance.html)
 * [Maven 3](https://maven.apache.org/download.cgi)
 
 ### Launch
 Use the below commands to launch the app
 ```
 git clone https://github.com/zafaralam2608/template-springboot.git
-cd portal-springboot
+cd template-springboot
 mvn spring-boot:run
 ```
 
