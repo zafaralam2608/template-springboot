@@ -3,8 +3,6 @@ package com.project.template.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.project.template.exception.EntityNotFoundException;
@@ -17,10 +15,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public abstract class BaseService<M extends Base, R extends BaseResource> {
-
-    /** The dependency for ModelMapper. */
-    @Autowired
-    private ModelMapper mapper;
 
     /** The repository dependency. */
     private final JpaRepository<M, Long> repository;
