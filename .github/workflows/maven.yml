@@ -22,5 +22,7 @@ jobs:
         java-version: '25'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Verify with Maven
+      run: mvn -B verify --file pom.xml
+    - name: Package with Maven
       run: mvn -B package --file pom.xml
